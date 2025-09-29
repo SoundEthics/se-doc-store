@@ -176,6 +176,15 @@ mcpServers:
     startup: false
     chatMenu: true
     serverInstructions: true
+  server-gmail-autoauth-mcp:
+    command: npx
+    args:
+      - -y
+      - "@smithery/cli@latest"
+      - run
+      - "@gongrzhe/server-gmail-autoauth-mcp"
+      - --key
+      - "fac4dc63-d0d0-4768-bb56-8e1fe1367197"
 
 # Example MCP Servers Object Structure
 # mcpServers:
