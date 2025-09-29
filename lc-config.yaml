@@ -170,6 +170,12 @@ mcpServers:
     startup: false
     chatMenu: true
     serverInstructions: true
+  notion:
+    type: streamable-http
+    url: https://mcp.notion.com/mcp
+    startup: false
+    chatMenu: true
+    serverInstructions: true
 
 # Example MCP Servers Object Structure
 # mcpServers:
