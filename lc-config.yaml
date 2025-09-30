@@ -94,7 +94,7 @@ interface:
     groups: true
     roles: true
   marketplace:
-      use: false
+      use: true
   fileCitations: true
   # Temporary chat retention period in hours (default: 720, min: 1, max: 8760)
   # temporaryChatRetention: 1
@@ -170,12 +170,14 @@ mcpServers:
     startup: false
     chatMenu: true
     serverInstructions: true
+    requiresOAuth: true
   notion:
     type: streamable-http
     url: https://mcp.notion.com/mcp
     startup: false
     chatMenu: true
     serverInstructions: true
+    requiresOAuth: true
 
 # Example MCP Servers Object Structure
 # mcpServers:
