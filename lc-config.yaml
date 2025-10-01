@@ -285,22 +285,6 @@ mcpServers:
 
 # Definition of custom endpoints
 endpoints:
-  # OpenAI Configuration for user_provided keys
-  openai:
-    apiKey: 'user_provided'
-    models:
-      default:
-        - 'gpt-5'
-        - 'gpt-5-mini'
-        - 'gpt-5-nano'
-        - 'gpt-5-chat-latest'
-        - 'gpt-4.1'
-        - 'gpt-4.1-mini'
-      fetch: false
-    titleConvo: true
-    titleModel: '${OPENAI_TITLE_MODEL}'
-    modelDisplayLabel: 'OpenAI'
-
   # assistants:
   #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
   #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
