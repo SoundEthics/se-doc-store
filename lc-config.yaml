@@ -34,36 +34,127 @@ interface:
   fileSearch: true
   # Privacy policy settings
   privacyPolicy:
-    externalUrl: '/privacy.html'
+    externalUrl: 'https://soundethics.notion.site/Privacy-Policy-27fccbc23e398048b37eed78ff086dc2?source=copy_link'
     openNewTab: false
 
   # Terms of service
   termsOfService:
-    externalUrl: '/terms.html'
+    externalUrl: 'https://www.notion.so/soundethics/Terms-Of-Service-27fccbc23e3980a69d85cb314594a52d?source=copy_link'
     openNewTab: true
     modalAcceptance: true
-    modalTitle: 'Labs to Legends — Terms of Service'
+    modalTitle: 'Terms of Service — Labs to Legends'
     modalContent: |
-      # Labs to Legends — Terms of Service
+      # Terms of Service — Labs to Legends
 
-      *Effective date: October 1, 2025*
+      **Effective Date:** 10-2-25
 
-      By using Labs to Legends, you agree to these Terms and our Privacy Policy. AI outputs can be inaccurate; verify important information and do not rely on outputs for medical, legal, or safety‑critical decisions.
+      **Version:** 1.0
 
-      ## Acceptable Use
-      Do not break the law, harm others, violate privacy or IP rights, attack the service, or upload unlawful content.
+      ---
 
-      ## AI Outputs and Content
-      You own your content. You grant us a license to host and process it to operate the service. You are responsible for how you use AI outputs.
+      ## 1. Agreement to Terms
 
-      ## Third‑Party Services
-      Some features rely on third‑party providers subject to their terms. Availability is not guaranteed.
+      By accessing or using **Labs to Legends** (the “Service”), you agree to be bound by these Terms of Service (“Terms”). If you do not agree, do not use the Service.
 
-      ## Disclaimers and Liability
-      Service is provided “as is.” We are not liable for indirect or consequential damages. Total liability is limited to the greater of fees paid in the last 3 months or $100.
+      ---
 
-      ## Changes and Contact
-      We may update these Terms. Continued use means acceptance. Contact: support@labstolegends.com.
+      ## 2. Eligibility
+
+      You must be at least **13 years old** (or the age required by local law in your jurisdiction) to use the Service. If you are under 18, you may only use the Service with the involvement of a parent or guardian.
+
+      ---
+
+      ## 3. Your Use of the Service
+
+      ### a) License
+
+      We grant you a limited, non-exclusive, non-transferable license to use the Service for lawful purposes.
+
+      ### b) Acceptable Use
+
+      You agree not to:
+
+      - Use the Service to break the law, infringe rights, or create harmful content.
+      - Attempt to interfere with or compromise the Service’s security.
+      - Misuse the Service (e.g., spamming, automated scraping, or reverse engineering).
+
+      We may suspend or terminate your access if you violate these Terms.
+
+      ---
+
+      ## 4. Accounts
+
+      If you create an account, you must provide accurate information and keep your credentials secure. You are responsible for activity under your account.
+
+      ---
+
+      ## 5. Content
+
+      ### a) Your Content
+
+      You retain ownership of the text, files, and other materials you provide (“Your Content”). By submitting Your Content, you grant us a limited license to process it solely to provide and improve the Service, consistent with our [Privacy Policy].
+
+      ### b) AI-Generated Output
+
+      The Service may generate content using third-party models. We do not claim ownership of AI-generated output you receive. However, you are responsible for how you use it, including ensuring it does not infringe rights or violate laws.
+
+      ---
+
+      ## 6. Third-Party Services
+
+      The Service may rely on external AI providers (such as OpenAI or Anthropic) and hosting vendors. Your use of the Service constitutes agreement to those providers processing your data as described in our Privacy Policy.
+
+      ---
+
+      ## 7. Intellectual Property
+
+      All rights, title, and interest in and to the Service (excluding Your Content and AI-generated output) remain with **Labs to Legends** and our licensors. You may not copy, modify, or distribute our software without permission.
+
+      ---
+
+      ## 8. Disclaimer of Warranties
+
+      The Service is provided on an **“as is” and “as available”** basis. We make no warranties, express or implied, about the Service’s reliability, availability, or suitability for your needs.
+
+      ---
+
+      ## 9. Limitation of Liability
+
+      To the maximum extent permitted by law, **Labs to Legends** will not be liable for:
+
+      - Any indirect, incidental, or consequential damages,
+      - Loss of data or profits,
+      - Or damages exceeding **$100 USD** or the amount you paid us in the past 12 months (whichever is greater).
+
+      Some jurisdictions do not allow certain limitations, so these may not apply to you.
+
+      ---
+
+      ## 10. Termination
+
+      We may suspend or terminate your access to the Service at any time, with or without notice, if you violate these Terms or use the Service in a harmful way.
+
+      ---
+
+      ## 11. Governing Law
+
+      These Terms are governed by the laws of **[insert jurisdiction, e.g., State of California, USA]**, without regard to conflict-of-laws principles.
+
+      ---
+
+      ## 12. Changes to Terms
+
+      We may update these Terms from time to time. If changes are material, we’ll provide notice (such as in-app or by email). Continued use of the Service after changes means you accept the revised Terms.
+
+      ---
+
+      ## 13. Contact
+
+      Questions about these Terms? Reach us at:
+
+      📧 **legal@soundethics.org**
+
+      📍 1800 N. Vine Los Angeles 90028
 
   endpointsMenu: true
   modelSelect: true
