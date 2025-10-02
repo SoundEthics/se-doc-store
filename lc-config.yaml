@@ -254,6 +254,18 @@ mcpServers:
     chatMenu: true
     serverInstructions: true
     requiresOAuth: true
+  context7:
+    type: streamable-http
+    url: https://mcp.context7.com/mcp
+    headers:
+      CONTEXT7_API_KEY: '{{CONTEXT7_API_KEY}}'
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+    customUserVars:
+      CONTEXT7_API_KEY:
+        title: 'Context7 API Key'
+        description: 'Paste your Context7 API key (starts with ctx7sk-). Stored per user.'
 
 # Example MCP Servers Object Structure
 # mcpServers:
