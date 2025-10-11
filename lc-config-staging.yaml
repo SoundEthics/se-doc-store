@@ -1,0 +1,502 @@
+# For more information, see the Configuration Guide:
+# https://www.librechat.ai/docs/configuration/librechat_yaml
+
+# Configuration version (required)
+version: 1.2.1
+
+# Cache settings: Set to true to enable caching
+cache: true
+
+# File storage configuration
+# Single strategy for all file types (legacy format, still supported)
+# fileStrategy: "s3"
+
+# Granular file storage strategies (new format - recommended)
+# Allows different storage strategies for different file types
+# fileStrategy:
+#   avatar: "s3"        # Storage for user/agent avatar images
+#   image: "firebase"   # Storage for uploaded images in chats
+#   document: "local"   # Storage for document uploads (PDFs, text files, etc.)
+
+# Available strategies: "local", "s3", "firebase"
+# If not specified, defaults to "local" for all file types
+# You can mix and match strategies based on your needs:
+# - Use S3 for avatars for fast global access
+# - Use Firebase for images with automatic optimization
+# - Use local storage for documents for privacy/compliance
+
+# Custom interface configuration
+interface:
+  customWelcome: 'l2l Labs to Legends - Welcome {{user.name}}.'
+  # Enable/disable file search as a chatarea selection (default: true)
+  # Note: This setting does not disable the Agents File Search Capability.
+  # To disable the Agents Capability, see the Agents Endpoint configuration instead.
+  fileSearch: true
+  # Privacy policy settings
+  privacyPolicy:
+    externalUrl: 'https://soundethics.notion.site/Privacy-Policy-27fccbc23e398048b37eed78ff086dc2?source=copy_link'
+    openNewTab: false
+
+  # Terms of service
+  termsOfService:
+    externalUrl: 'https://www.notion.so/soundethics/Terms-Of-Service-27fccbc23e3980a69d85cb314594a52d?source=copy_link'
+    openNewTab: true
+    modalAcceptance: true
+    modalTitle: 'Terms of Service — Labs to Legends'
+    modalContent: |
+      # Terms of Service — Labs to Legends
+
+      **Effective Date:** 10-2-25
+
+      **Version:** 1.0
+
+      ---
+
+      ## 1. Agreement to Terms
+
+      By accessing or using **Labs to Legends** (the “Service”), you agree to be bound by these Terms of Service (“Terms”). If you do not agree, do not use the Service.
+
+      ---
+
+      ## 2. Eligibility
+
+      You must be at least **13 years old** (or the age required by local law in your jurisdiction) to use the Service. If you are under 18, you may only use the Service with the involvement of a parent or guardian.
+
+      ---
+
+      ## 3. Your Use of the Service
+
+      ### a) License
+
+      We grant you a limited, non-exclusive, non-transferable license to use the Service for lawful purposes.
+
+      ### b) Acceptable Use
+
+      You agree not to:
+
+      - Use the Service to break the law, infringe rights, or create harmful content.
+      - Attempt to interfere with or compromise the Service’s security.
+      - Misuse the Service (e.g., spamming, automated scraping, or reverse engineering).
+
+      We may suspend or terminate your access if you violate these Terms.
+
+      ---
+
+      ## 4. Accounts
+
+      If you create an account, you must provide accurate information and keep your credentials secure. You are responsible for activity under your account.
+
+      ---
+
+      ## 5. Content
+
+      ### a) Your Content
+
+      You retain ownership of the text, files, and other materials you provide (“Your Content”). By submitting Your Content, you grant us a limited license to process it solely to provide and improve the Service, consistent with our [Privacy Policy].
+
+      ### b) AI-Generated Output
+
+      The Service may generate content using third-party models. We do not claim ownership of AI-generated output you receive. However, you are responsible for how you use it, including ensuring it does not infringe rights or violate laws.
+
+      ---
+
+      ## 6. Third-Party Services
+
+      The Service may rely on external AI providers (such as OpenAI or Anthropic) and hosting vendors. Your use of the Service constitutes agreement to those providers processing your data as described in our Privacy Policy.
+
+      ---
+
+      ## 7. Intellectual Property
+
+      All rights, title, and interest in and to the Service (excluding Your Content and AI-generated output) remain with **Labs to Legends** and our licensors. You may not copy, modify, or distribute our software without permission.
+
+      ---
+
+      ## 8. Disclaimer of Warranties
+
+      The Service is provided on an **“as is” and “as available”** basis. We make no warranties, express or implied, about the Service’s reliability, availability, or suitability for your needs.
+
+      ---
+
+      ## 9. Limitation of Liability
+
+      To the maximum extent permitted by law, **Labs to Legends** will not be liable for:
+
+      - Any indirect, incidental, or consequential damages,
+      - Loss of data or profits,
+      - Or damages exceeding **$100 USD** or the amount you paid us in the past 12 months (whichever is greater).
+
+      Some jurisdictions do not allow certain limitations, so these may not apply to you.
+
+      ---
+
+      ## 10. Termination
+
+      We may suspend or terminate your access to the Service at any time, with or without notice, if you violate these Terms or use the Service in a harmful way.
+
+      ---
+
+      ## 11. Governing Law
+
+      These Terms are governed by the laws of **[insert jurisdiction, e.g., State of California, USA]**, without regard to conflict-of-laws principles.
+
+      ---
+
+      ## 12. Changes to Terms
+
+      We may update these Terms from time to time. If changes are material, we’ll provide notice (such as in-app or by email). Continued use of the Service after changes means you accept the revised Terms.
+
+      ---
+
+      ## 13. Contact
+
+      Questions about these Terms? Reach us at:
+
+      📧 **legal@soundethics.org**
+
+      📍 1800 N. Vine Los Angeles 90028
+
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  agents: true
+  peoplePicker:
+    users: true
+    groups: true
+    roles: true
+  marketplace:
+      use: true
+  fileCitations: true
+  # Temporary chat retention period in hours (default: 720, min: 1, max: 8760)
+  # temporaryChatRetention: 1
+
+# Example Cloudflare turnstile (optional)
+#turnstile:
+#  siteKey: "your-site-key-here"
+#  options:
+#    language: "auto"    # "auto" or an ISO 639-1 language code (e.g. en)
+#    size: "normal"      # Options: "normal", "compact", "flexible", or "invisible"
+
+# Example Registration Object Structure (optional)
+registration:
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple', 'saml']
+  # allowedDomains:
+  # - "gmail.com"
+
+# Example Balance settings
+# balance:
+#   enabled: false
+#   startBalance: 20000
+#   autoRefillEnabled: false
+#   refillIntervalValue: 30
+#   refillIntervalUnit: 'days'
+#   refillAmount: 10000
+
+# Example Transactions settings
+# Controls whether to save transaction records to the database
+# Default is true (enabled)
+#transactions:
+#  enabled: false
+# Note: If balance.enabled is true, transactions will always be enabled
+# regardless of this setting to ensure balance tracking works correctly
+
+# speech:
+#   tts:
+#     openai:
+#       url: ''
+#       apiKey: '${TTS_API_KEY}'
+#       model: ''
+#       voices: ['']
+
+#
+#   stt:
+#     openai:
+#       url: ''
+#       apiKey: '${STT_API_KEY}'
+#       model: ''
+
+# rateLimits:
+#   fileUploads:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for file uploads per user
+#   conversationsImport:
+#     ipMax: 100
+#     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
+#     userMax: 50
+#     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
+
+# Example Actions Object Structure
+actions:
+  allowedDomains:
+    - 'swapi.dev'
+    - 'librechat.ai'
+    - 'google.com'
+
+mcpServers:
+  pyi:
+    type: streamable-http
+    url: https://mcp-boilerplate-2.jb-4da.workers.dev/mcp
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+    requiresOAuth: true
+  notion:
+    type: streamable-http
+    url: https://mcp.notion.com/mcp
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+    requiresOAuth: true
+  context7:
+    type: streamable-http
+    url: https://mcp.context7.com/mcp
+    headers:
+      CONTEXT7_API_KEY: '{{CONTEXT7_API_KEY}}'
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+    customUserVars:
+      CONTEXT7_API_KEY:
+        title: 'Context7 API Key'
+        description: 'Paste your Context7 API key (starts with ctx7sk-). Stored per user.'
+  rails:
+    type: streamable-http
+    url: https://se-mcp-rw-1-production.up.railway.app/mcp/messages
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+
+# Example MCP Servers Object Structure
+# mcpServers:
+#   everything:
+#     # type: sse # type can optionally be omitted
+#     url: http://localhost:3001/sse
+#     timeout: 60000  # 1 minute timeout for this server, this is the default timeout for MCP servers.
+#   puppeteer:
+#     type: stdio
+#     command: npx
+#     args:
+#       - -y
+#       - "@modelcontextprotocol/server-puppeteer"
+#     timeout: 300000  # 5 minutes timeout for this server
+#   filesystem:
+#     # type: stdio
+#     command: npx
+#     args:
+#       - -y
+#       - "@modelcontextprotocol/server-filesystem"
+#       - /home/user/LibreChat/
+#     iconPath: /home/user/LibreChat/client/public/assets/logo.svg
+#   mcp-obsidian:
+#     command: npx
+#     args:
+#       - -y
+#       - "mcp-obsidian"
+#       - /path/to/obsidian/vault
+
+# Definition of custom endpoints
+endpoints:
+  # assistants:
+  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
+  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
+  #   timeoutMs: 180000  # Timeout for assistant operations
+  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
+  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
+  #   # excludedIds: ["asst_excludedAssistantId"]
+  #   # Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
+  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
+  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
+  #   retrievalModels: ["gpt-4-turbo-preview"]
+  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+  agents: {}
+    # (optional) Default recursion depth for agents, defaults to 25
+    # recursionLimit: 50
+    # (optional) Max recursion depth for agents, defaults to 25
+    # maxRecursionLimit: 100
+    # (optional) Disable the builder interface for agents
+    # disableBuilder: false
+    # (optional) Maximum total citations to include in agent responses, defaults to 30
+    # maxCitations: 30
+    # (optional) Maximum citations per file to include in agent responses, defaults to 7
+    # maxCitationsPerFile: 7
+    # (optional) Minimum relevance score for sources to be included in responses, defaults to 0.45 (45% relevance threshold)
+    # Set to 0.0 to show all sources (no filtering), or higher like 0.7 for stricter filtering
+    # minRelevanceScore: 0.45
+    # (optional) Agent Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+    # Excluding execute_code since CODE_API_KEY is not configured
+    # capabilities: ["file_search", "web_search", "artifacts", "actions", "context", "tools", "chain", "ocr"]
+  # custom:
+    # # Groq Example - DISABLED
+    # - name: 'groq'
+    #   apiKey: '${GROQ_API_KEY}'
+    #   baseURL: 'https://api.groq.com/openai/v1/'
+    #   models:
+    #     default:
+    #       [
+    #         'llama3-70b-8192',
+    #         'llama3-8b-8192',
+    #         'llama2-70b-4096',
+    #         'mixtral-8x7b-32768',
+    #         'gemma-7b-it',
+    #       ]
+    #     fetch: false
+    #   titleConvo: true
+    #   titleModel: 'mixtral-8x7b-32768'
+    #   modelDisplayLabel: 'groq'
+
+    # # Mistral AI Example - DISABLED
+    # - name: 'Mistral' # Unique name for the endpoint
+    #   # For `apiKey` and `baseURL`, you can use environment variables that you define.
+    #   # recommended environment variables:
+    #   apiKey: '${MISTRAL_API_KEY}'
+    #   baseURL: 'https://api.mistral.ai/v1'
+
+    #   # Models configuration
+    #   models:
+    #     # List of default models to use. At least one value is required.
+    #     default: ['mistral-tiny', 'mistral-small', 'mistral-medium']
+    #     # Fetch option: Set to true to fetch models from API.
+    #     fetch: true # Defaults to false.
+
+    #   # Optional configurations
+
+    #   # Title Conversation setting
+    #   titleConvo: true # Set to true to enable title conversation
+
+    #   # Title Method: Choose between "completion" or "functions".
+    #   # titleMethod: "completion"  # Defaults to "completion" if omitted.
+
+    #   # Title Model: Specify the model to use for titles.
+    #   titleModel: 'mistral-tiny' # Defaults to "gpt-3.5-turbo" if omitted.
+
+    #   # Summarize setting: Set to true to enable summarization.
+    #   # summarize: false
+
+    #   # Summary Model: Specify the model to use if summarization is enabled.
+    #   # summaryModel: "mistral-tiny"  # Defaults to "gpt-3.5-turbo" if omitted.
+
+    #   # Force Prompt setting: If true, sends a `prompt` parameter instead of `messages`.
+    #   # forcePrompt: false
+
+    #   # The label displayed for the AI model in messages.
+    #   modelDisplayLabel: 'Mistral' # Default is "AI" when not set.
+
+    #   # Add additional parameters to the request. Default params will be overwritten.
+    #   # addParams:
+    #   # safe_prompt: true # This field is specific to Mistral AI: https://docs.mistral.ai/api/
+
+    #   # Drop Default params parameters from the request. See default params in guide linked below.
+    #   # NOTE: For Mistral, it is necessary to drop the following parameters or you will encounter a 422 Error:
+    #   dropParams: ['stop', 'user', 'frequency_penalty', 'presence_penalty']
+
+    # # OpenRouter Example - DISABLED
+    # - name: 'OpenRouter'
+    #   # For `apiKey` and `baseURL`, you can use environment variables that you define.
+    #   # recommended environment variables:
+    #   apiKey: '${OPENROUTER_KEY}'
+    #   baseURL: 'https://openrouter.ai/api/v1'
+    #   headers:
+    #       x-librechat-body-parentmessageid: '{{LIBRECHAT_BODY_PARENTMESSAGEID}}'
+    #   models:
+    #     default: ['meta-llama/llama-3-70b-instruct']
+    #     fetch: true
+    #   titleConvo: true
+    #   titleModel: 'meta-llama/llama-3-70b-instruct'
+    #   # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
+    #   dropParams: ['stop']
+    #   modelDisplayLabel: 'OpenRouter'
+
+    # # Portkey AI Example - DISABLED
+    # - name: 'Portkey'
+    #   apiKey: 'dummy'
+    #   baseURL: 'https://api.portkey.ai/v1'
+    #   headers:
+    #     x-portkey-api-key: '${PORTKEY_API_KEY}'
+    #     x-portkey-virtual-key: '${PORTKEY_OPENAI_VIRTUAL_KEY}'
+    #   models:
+    #     default: ['gpt-4o-mini', 'gpt-4o', 'chatgpt-4o-latest']
+    #     fetch: true
+    #   titleConvo: true
+    #   titleModel: 'current_model'
+    #   summarize: false
+    #   summaryModel: 'current_model'
+    #   forcePrompt: false
+    #   modelDisplayLabel: 'Portkey'
+    #   iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
+# fileConfig:
+#   endpoints:
+#     assistants:
+#       fileLimit: 5
+#       fileSizeLimit: 10  # Maximum size for an individual file in MB
+#       totalSizeLimit: 50  # Maximum total size for all files in a single request in MB
+#       supportedMimeTypes:
+#         - "image/.*"
+#         - "application/pdf"
+#     openAI:
+#       disabled: true  # Disables file uploading to the OpenAI endpoint
+#     default:
+#       totalSizeLimit: 20
+#     YourCustomEndpointName:
+#       fileLimit: 2
+#       fileSizeLimit: 5
+#   serverFileSizeLimit: 100  # Global server file size limit in MB
+#   avatarSizeLimit: 2  # Limit for user avatar image size in MB
+#   imageGeneration: # Image Gen settings, either percentage or px
+#     percentage: 100
+#     px: 1024
+#   # Client-side image resizing to prevent upload errors
+#   clientImageResize:
+#     enabled: false  # Enable/disable client-side image resizing (default: false)
+#     maxWidth: 1900  # Maximum width for resized images (default: 1900)
+#     maxHeight: 1900  # Maximum height for resized images (default: 1900)
+#     quality: 0.92  # JPEG quality for compression (0.0-1.0, default: 0.92)
+# # See the Custom Configuration Guide for more information on Assistants Config:
+# # https://www.librechat.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
+
+# Web Search Configuration (optional)
+# webSearch:
+#   # Jina Reranking Configuration
+#   jinaApiKey: '${JINA_API_KEY}'  # Your Jina API key
+#   jinaApiUrl: '${JINA_API_URL}'  # Custom Jina API URL (optional, defaults to https://api.jina.ai/v1/rerank)
+#   
+#   # Other rerankers
+#   cohereApiKey: '${COHERE_API_KEY}'
+#   
+#   # Search providers
+#   serperApiKey: '${SERPER_API_KEY}'
+#   searxngInstanceUrl: '${SEARXNG_INSTANCE_URL}'
+#   searxngApiKey: '${SEARXNG_API_KEY}'
+#   
+#   # Content scrapers
+#   firecrawlApiKey: '${FIRECRAWL_API_KEY}'
+#   firecrawlApiUrl: '${FIRECRAWL_API_URL}'
+
+# Memory configuration for user memories
+# memory:
+#   # (optional) Disable memory functionality
+#   disabled: false
+#   # (optional) Restrict memory keys to specific values to limit memory storage and improve consistency
+#   validKeys: ["preferences", "work_info", "personal_info", "skills", "interests", "context"]
+#   # (optional) Maximum token limit for memory storage (not yet implemented for token counting)
+#   tokenLimit: 10000
+#   # (optional) Enable personalization features (defaults to true if memory is configured)
+#   # When false, users will not see the Personalization tab in settings
+#   personalize: true
+#   # Memory agent configuration - either use an existing agent by ID or define inline
+#   agent:
+#     # Option 1: Use existing agent by ID
+#     id: "your-memory-agent-id"
+#     # Option 2: Define agent inline
+#     # provider: "openai"
+#     # model: "gpt-4o-mini"
+#     # instructions: "You are a memory management assistant. Store and manage user information accurately."
+#     # model_parameters:
+#     #   temperature: 0.1
