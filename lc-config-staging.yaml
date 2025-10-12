@@ -257,6 +257,7 @@ mcpServers:
   context7:
     type: streamable-http
     url: https://mcp.context7.com/mcp
+    timeout: 300000
     headers:
       CONTEXT7_API_KEY: '{{CONTEXT7_API_KEY}}'
     startup: false
@@ -268,7 +269,7 @@ mcpServers:
         description: 'Paste your Context7 API key (starts with ctx7sk-). Stored per user.'
   rails:
     type: streamable-http
-    url: https://se-mcp-rw-1-production.up.railway.app/mcp/sse
+    url: https://se-mcp-rw-1-production.up.railway.app/mcp/messages
     startup: false
     chatMenu: true
     serverInstructions: true
