@@ -255,7 +255,7 @@ mcpServers:
     serverInstructions: true
     requiresOAuth: true
   context7:
-    type: streamable-http
+    type: sse
     url: https://mcp.context7.com/mcp
     timeout: 300000
     headers:
