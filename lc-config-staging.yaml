@@ -255,9 +255,8 @@ mcpServers:
     serverInstructions: true
     requiresOAuth: true
   context7:
-    type: sse
+    type: streamable-http
     url: https://mcp.context7.com/mcp
-    timeout: 300000
     headers:
       CONTEXT7_API_KEY: '{{CONTEXT7_API_KEY}}'
     startup: false
