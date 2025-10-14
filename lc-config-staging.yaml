@@ -272,6 +272,7 @@ mcpServers:
     startup: false
     chatMenu: true
     serverInstructions: true
+    requiresOAuth: true
 
 # Example MCP Servers Object Structure
 # mcpServers:
