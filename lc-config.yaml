@@ -266,12 +266,13 @@ mcpServers:
       CONTEXT7_API_KEY:
         title: 'Context7 API Key'
         description: 'Paste your Context7 API key (starts with ctx7sk-). Stored per user.'
-  rails:
-    type: streamable-http
-    url: https://se-mcp-rw-1-production.up.railway.app/mcp/messages
+ rails:
+    type: sse
+    url: https://se-mcp-rw-1-production.up.railway.app/mcp/sse
     startup: false
     chatMenu: true
     serverInstructions: true
+    requiresOAuth: true
 
 # Example MCP Servers Object Structure
 # mcpServers:
