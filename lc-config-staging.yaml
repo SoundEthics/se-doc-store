@@ -273,7 +273,13 @@ mcpServers:
     chatMenu: true
     serverInstructions: true
     requiresOAuth: true
-
+  cipher:
+    type: sse
+    url: https://drain-bramaged-gen-db-staging.up.railway.app/sse
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+    requiresOAuth: false
 # Example MCP Servers Object Structure
 # mcpServers:
 #   everything:
