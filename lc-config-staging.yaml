@@ -188,6 +188,17 @@ registration:
   # allowedDomains:
   # - "gmail.com"
 
+balance:
+  enabled: true
+  startBalance: 5000          # small default allowance (~$0.005 equivalent)
+  autoRefillEnabled: false    # no automatic top-ups for general users
+  refillIntervalValue: 30
+  refillIntervalUnit: 'days'
+  refillAmount: 0
+
+transactions:
+  enabled: true               # leave on for proper balance tracking
+
 # Example Balance settings
 # balance:
 #   enabled: false
