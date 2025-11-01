@@ -156,22 +156,55 @@ interface:
 
       📍 1800 N. Vine Los Angeles 90028
 
+# interface:
+#   # WARNING: The keys below OVERRIDE role permissions for BOTH USER and ADMIN when present.
+#   # Leave them commented out to respect the values in the ROLES documents.
+#   #
+#   # Feature permissions (override roles if set):
+#   # prompts: true
+#   # bookmarks: true
+#   # multiConvo: true
+#   # agents: true
+#   # temporaryChat: true
+#   # runCode: true
+#   # webSearch: true
+#   # fileSearch: true
+#   # fileCitations: true
+#   # memories: true
+#   # peoplePicker:
+#   #   users: true
+#   #   groups: true
+#   #   roles: true
+#   # marketplace:
+#   #   use: true
+#
+#   # UI-only toggles (do NOT affect role permissions; safe to set without overriding):
+#   # endpointsMenu: true
+#   # modelSelect: true
+#   # parameters: true
+#   # sidePanel: true
+#   # presets: true
+
   endpointsMenu: true
   modelSelect: true
   parameters: true
   sidePanel: true
   presets: true
-  prompts: true
-  bookmarks: true
-  multiConvo: true
-  agents: true
-  peoplePicker:
-    users: true
-    groups: true
-    roles: true
-  marketplace:
-      use: true
-  fileCitations: true
+
+  
+  #prompts: true
+  #bookmarks: true
+  #multiConvo: true
+  #agents: true
+  #peoplePicker:
+  #  users: true
+  #  groups: true
+  #  roles: true
+  #marketplace:
+  #    use: true
+  #fileCitations: true
+
+  
   # Temporary chat retention period in hours (default: 720, min: 1, max: 8760)
   # temporaryChatRetention: 1
 
