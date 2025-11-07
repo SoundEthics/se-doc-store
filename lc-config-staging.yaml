@@ -190,8 +190,7 @@ interface:
   parameters: true
   sidePanel: true
   presets: true
-
-  
+  sidePanelDefaultCollapsedRoles: ['USER']
   #prompts: true
   #bookmarks: true
   #multiConvo: true
