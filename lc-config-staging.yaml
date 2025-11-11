@@ -221,7 +221,7 @@ registration:
   # - "gmail.com"
 
 balance:
-  enabled: true
+  enabled: false
   startBalance: 5000          # small default allowance (~$0.005 equivalent)
   autoRefillEnabled: false    # no automatic top-ups for general users
   refillIntervalValue: 30
@@ -229,7 +229,7 @@ balance:
   refillAmount: 0
 
 transactions:
-  enabled: true               # leave on for proper balance tracking
+  enabled: false               # leave on for proper balance tracking
 
 # Example Balance settings
 # balance:
