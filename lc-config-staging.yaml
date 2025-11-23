@@ -379,7 +379,7 @@ modelSpecs:
         modelSelect: false
         endpointsMenu: false
         
-agents: {}
+ #agents: {}
     # (optional) Default recursion depth for agents, defaults to 25
     # recursionLimit: 50
     # (optional) Max recursion depth for agents, defaults to 25
