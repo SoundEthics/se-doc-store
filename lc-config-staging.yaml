@@ -367,8 +367,14 @@ endpoints:
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
 modelSpecs:
+  list:
+    - name: "general-assistant"
+      label: "General Assistant"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-4o-mini"
   roles:
-    user:
+    USER:
       interface:
         modelSelect: false
         endpointsMenu: false
