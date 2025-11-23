@@ -185,8 +185,8 @@ interface:
 #   # sidePanel: true
 #   # presets: true
 
-  endpointsMenu: true
-  modelSelect: true
+  endpointsMenu: false
+  modelSelect: false
   parameters: true
   sidePanel: true
   presets: true
@@ -378,6 +378,16 @@ modelSpecs:
       interface:
         modelSelect: false
         endpointsMenu: false
+
+    ADMIN:
+      interface:
+        modelSelect: true
+        endpointsMenu: true
+
+    TEAM:
+      interface:
+        modelSelect: true
+        endpointsMenu: true
         
  #agents: {}
     # (optional) Default recursion depth for agents, defaults to 25
