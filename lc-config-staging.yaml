@@ -366,12 +366,12 @@ endpoints:
   #   retrievalModels: ["gpt-4-turbo-preview"]
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-  modelSpecs:
-    roles:
-      user:
-        interface:
-          modelSelect: false
-          endpointsMenu: false
+modelSpecs:
+  roles:
+    user:
+      interface:
+        modelSelect: false
+        endpointsMenu: false
   agents: {}
     # (optional) Default recursion depth for agents, defaults to 25
     # recursionLimit: 50
