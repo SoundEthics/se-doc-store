@@ -376,17 +376,20 @@ modelSpecs:
         model: "gpt-4o-mini"
   roles:
     USER:
+      include: ["general-assistant"]
       interface:
         modelSelect: false
         endpointsMenu: false
 
     ADMIN:
       interface:
+        exclude: ["general-assistant"]
         modelSelect: true
         endpointsMenu: true
 
     TEAM:
       interface:
+        exclude: ["general-assistant"]
         modelSelect: true
         endpointsMenu: true
 
