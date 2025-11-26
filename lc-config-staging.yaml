@@ -185,8 +185,8 @@ interface:
 #   # sidePanel: true
 #   # presets: true
 
-  endpointsMenu: false
-  modelSelect: false
+  #endpointsMenu: false
+ # modelSelect: false
   parameters: true
   sidePanel: true
   presets: true
