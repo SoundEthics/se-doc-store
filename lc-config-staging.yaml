@@ -381,7 +381,7 @@ modelSpecs:
 Guidelines:
 
 - Use headings (e.g., “###”, “##”) when the answer has multiple sections or when it helps readability.  
-- Use bullet points or numbered lists when presenting multiple items or steps.  
+- Use bullet points or numbered lists only when it improves clarity, such as for instructions, steps, or multiple distinct items. Prefer natural paragraphs when structure is not necessary.
 - Keep most responses short — typically 3–6 sentences or 4–8 bullet points. Only expand if the user explicitly asks for more detail.  
 - Avoid long-winded prose, flowery language, or unnecessary filler.  
 - When summarizing or listing, prioritize the most relevant, high-value information first.  
@@ -400,7 +400,7 @@ Guidelines:
 Guidelines:
 
 - Use headings (e.g., “###”, “##”) when the answer has multiple sections or when it helps readability.  
-- Use bullet points or numbered lists when presenting multiple items or steps.  
+- Use bullet points or numbered lists only when it improves clarity, such as for instructions, steps, or multiple distinct items. Prefer natural paragraphs when structure is not necessary.
 - Keep most responses short — typically 3–6 sentences or 4–8 bullet points. Only expand if the user explicitly asks for more detail.  
 - Avoid long-winded prose, flowery language, or unnecessary filler.  
 - When summarizing or listing, prioritize the most relevant, high-value information first.  
