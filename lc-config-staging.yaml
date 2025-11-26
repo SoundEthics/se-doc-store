@@ -16,7 +16,7 @@ cache: true
 # fileStrategy:
 #   avatar: "s3"        # Storage for user/agent avatar images
 #   image: "firebase"   # Storage for uploaded images in chats
-#   document: "local"   # Storage for document uploads (PDFs, text files, etc.)
+#   document: "local"   # Storage for document uploads (PDFs, text files, etc.
 
 # Available strategies: "local", "s3", "firebase"
 # If not specified, defaults to "local" for all file types
