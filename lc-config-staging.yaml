@@ -374,13 +374,13 @@ modelSpecs:
       preset:
         endpoint: "openAI"
         model: "gpt-5-mini"
-        promptPrefix: "Talk like Ben Franklin. Assume his personal Identity and talk like him"
+    #    promptPrefix: "Talk like Ben Franklin. Assume his personal Identity and talk like him"
     - name: "chat-gpt-5-plus"
       label: "Chatgpt 5 Plus"
       preset:
         endpoint: "openAI"
         model: "gpt-5.1"
-        promptPrefix: "Talk like Ben Franklin. Assume his personal Identity and talk like him"
+   #     promptPrefix: "Talk like Ben Franklin. Assume his personal Identity and talk like him"
   roles:
     USER:
       include: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
