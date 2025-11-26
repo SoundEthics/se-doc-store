@@ -383,7 +383,7 @@ modelSpecs:
         promptPrefix: "Talk like Ben Franklin. Assume his personal Identity and talk like him"
   roles:
     USER:
-      include: ["chat-gpt-5-min", "chat-gpt-5-plus"]
+      include: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
       interface:
         modelSelect: false
         endpointsMenu: false
