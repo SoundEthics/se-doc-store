@@ -367,6 +367,7 @@ mcpServers:
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
 modelSpecs:
+ prioritize: true
   list:
     - name: "general-assistant"
       label: "General Assistant"
@@ -388,7 +389,7 @@ modelSpecs:
       interface:
         modelSelect: true
         endpointsMenu: true
-        
+
  #agents: {}
     # (optional) Default recursion depth for agents, defaults to 25
     # recursionLimit: 50
