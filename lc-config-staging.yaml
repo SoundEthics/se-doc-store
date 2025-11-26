@@ -389,13 +389,13 @@ modelSpecs:
         endpointsMenu: false
 
     ADMIN:
-      exclude: ["general-assistant"]
+      exclude: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
       interface:
         modelSelect: true
         endpointsMenu: true
 
     TEAM:
-      exclude: ["general-assistant"]
+      exclude: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
       interface:
         modelSelect: true
         endpointsMenu: true
