@@ -382,14 +382,14 @@ modelSpecs:
         endpointsMenu: false
 
     ADMIN:
+      exclude: ["general-assistant"]
       interface:
-        exclude: ["general-assistant"]
         modelSelect: true
         endpointsMenu: true
 
     TEAM:
+      exclude: ["general-assistant"]
       interface:
-        exclude: ["general-assistant"]
         modelSelect: true
         endpointsMenu: true
 
