@@ -374,6 +374,7 @@ modelSpecs:
       preset:
         endpoint: "openAI"
         model: "gpt-4o-mini"
+        promptPrefix: "Talk like Ben Franklin. Assume his personal Identity and talk like him"
   roles:
     USER:
       include: ["general-assistant"]
