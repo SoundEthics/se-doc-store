@@ -2,9 +2,9 @@
 # https://www.librechat.ai/docs/configuration/librechat_yaml
 
 # Configuration version (required)
-version: 1.2.1
+version: 1.3.0
 
-# Cache settings: Set to true to enable caching
+# Cache settings: Set to true to enable caching 2
 cache: true
 
 # File storage configuration
@@ -16,7 +16,7 @@ cache: true
 # fileStrategy:
 #   avatar: "s3"        # Storage for user/agent avatar images
 #   image: "firebase"   # Storage for uploaded images in chats
-#   document: "local"   # Storage for document uploads (PDFs, text files, etc.)
+#   document: "local"   # Storage for document uploads (PDFs, text files, etc.
 
 # Available strategies: "local", "s3", "firebase"
 # If not specified, defaults to "local" for all file types
@@ -156,22 +156,54 @@ interface:
 
       📍 1800 N. Vine Los Angeles 90028
 
+# interface:
+#   # WARNING: The keys below OVERRIDE role permissions for BOTH USER and ADMIN when present.
+#   # Leave them commented out to respect the values in the ROLES documents.
+#   #
+#   # Feature permissions (override roles if set):
+#   # prompts: true
+#   # bookmarks: true
+#   # multiConvo: true
+#   # agents: true
+#   # temporaryChat: true
+#   # runCode: true
+#   # webSearch: true
+#   # fileSearch: true
+#   # fileCitations: true
+#   # memories: true
+#   # peoplePicker:
+#   #   users: true
+#   #   groups: true
+#   #   roles: true
+#   # marketplace:
+#   #   use: true
+#
+#   # UI-only toggles (do NOT affect role permissions; safe to set without overriding):
+#   # endpointsMenu: true
+#   # modelSelect: true
+#   # parameters: true
+#   # sidePanel: true
+#   # presets: true
+
   endpointsMenu: true
   modelSelect: true
   parameters: true
   sidePanel: true
   presets: true
-  prompts: true
-  bookmarks: true
-  multiConvo: true
-  agents: true
-  peoplePicker:
-    users: true
-    groups: true
-    roles: true
-  marketplace:
-      use: true
-  fileCitations: true
+  sidePanelDefaultCollapsedRoles: ['USER']
+  #prompts: true
+  #bookmarks: true
+  #multiConvo: true
+  #agents: true
+  #peoplePicker:
+  #  users: true
+  #  groups: true
+  #  roles: true
+  #marketplace:
+  #    use: true
+  #fileCitations: true
+
+  
   # Temporary chat retention period in hours (default: 720, min: 1, max: 8760)
   # temporaryChatRetention: 1
 
@@ -187,6 +219,17 @@ registration:
   socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple', 'saml']
   # allowedDomains:
   # - "gmail.com"
+
+balance:
+  enabled: true
+  startBalance: 5000          # small default allowance (~$0.005 equivalent)
+  autoRefillEnabled: true    # no automatic top-ups for general users
+  refillIntervalValue: 30
+  refillIntervalUnit: 'days'
+  refillAmount: 5000
+
+transactions:
+  enabled: true               # leave on for proper balance tracking
 
 # Example Balance settings
 # balance:
@@ -232,6 +275,29 @@ registration:
 #     userMax: 50
 #     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
 
+
+  rateLimits:
+    fileUploads:
+      ipMax: 40
+      ipWindowInMinutes: 15
+      userMax: 20
+      userWindowInMinutes: 15
+    conversationsImport:
+      ipMax: 20
+      ipWindowInMinutes: 15
+      userMax: 10
+      userWindowInMinutes: 15
+    tts:
+      ipMax: 30
+      ipWindowInMinutes: 1
+      userMax: 15
+      userWindowInMinutes: 1
+    stt:
+      ipMax: 30
+      ipWindowInMinutes: 1
+      userMax: 15
+      userWindowInMinutes: 1    
+
 # Example Actions Object Structure
 actions:
   allowedDomains:
@@ -273,7 +339,13 @@ mcpServers:
     chatMenu: true
     serverInstructions: true
     requiresOAuth: true
-
+  cipher:
+    type: sse
+    url: https://drain-bramaged-gen-db-staging.up.railway.app/sse
+    startup: false
+    chatMenu: true
+    serverInstructions: true
+    requiresOAuth: false
 # Example MCP Servers Object Structure
 # mcpServers:
 #   everything:
@@ -303,7 +375,7 @@ mcpServers:
 #       - /path/to/obsidian/vault
 
 # Definition of custom endpoints
-endpoints:
+#endpoints:
   # assistants:
   #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
   #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
@@ -317,7 +389,68 @@ endpoints:
   #   retrievalModels: ["gpt-4-turbo-preview"]
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-  agents: {}
+modelSpecs:
+# prioritize: true
+  list:
+    - name: "chat-gpt-5-mini"
+      label: "Chatgpt 5"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-5-mini"
+    #    useResponsesApi: true
+        
+        promptPrefix: "You are an assistant that answers clearly and concisely, in a style similar to ChatGPT’s standard subscription interface.
+
+Guidelines:
+
+- Use headings (e.g., “###”, “##”) when the answer has multiple sections or when it helps readability.  
+- Use bullet points or numbered lists only when it improves clarity, such as for instructions, steps, or multiple distinct items. Prefer natural paragraphs when structure is not necessary.
+- Keep most responses short — typically 3–6 sentences or 4–8 bullet points. Only expand if the user explicitly asks for more detail.  
+- Avoid long-winded prose, flowery language, or unnecessary filler.  
+- When summarizing or listing, prioritize the most relevant, high-value information first.  
+- Format code, commands, or quotations clearly (e.g. use code blocks for code).  
+- If you don’t know something, say you don’t know — don’t invent or speculate.  
+- Be neutral, factual, and professional (avoid overly casual tone, jokes, or emojis).  
+"
+    - name: "chat-gpt-5-plus"
+      label: "Chatgpt 5 Plus"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-5.1"
+   #     useResponsesApi: true
+        promptPrefix: "You are an assistant that answers clearly and concisely, in a style similar to ChatGPT’s standard subscription interface.
+
+Guidelines:
+
+- Use headings (e.g., “###”, “##”) when the answer has multiple sections or when it helps readability.  
+- Use bullet points or numbered lists only when it improves clarity, such as for instructions, steps, or multiple distinct items. Prefer natural paragraphs when structure is not necessary.
+- Keep most responses short — typically 3–6 sentences or 4–8 bullet points. Only expand if the user explicitly asks for more detail.  
+- Avoid long-winded prose, flowery language, or unnecessary filler.  
+- When summarizing or listing, prioritize the most relevant, high-value information first.  
+- Format code, commands, or quotations clearly (e.g. use code blocks for code).  
+- If you don’t know something, say you don’t know — don’t invent or speculate.  
+- Be neutral, factual, and professional (avoid overly casual tone, jokes, or emojis).  
+"
+  roles:
+    USER:
+      include: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
+      interface:
+        modelSelect: false
+        endpointsMenu: false
+
+    ADMIN:
+      exclude: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
+      interface:
+        modelSelect: true
+        endpointsMenu: true
+
+    TEAM:
+      exclude: ["chat-gpt-5-mini", "chat-gpt-5-plus"]
+      interface:
+        modelSelect: true
+        endpointsMenu: true
+
+ #agents: {}
     # (optional) Default recursion depth for agents, defaults to 25
     # recursionLimit: 50
     # (optional) Max recursion depth for agents, defaults to 25
