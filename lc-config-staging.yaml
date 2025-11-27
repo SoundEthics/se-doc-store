@@ -275,6 +275,18 @@ transactions:
 #     userMax: 50
 #     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
 
+  rateLimits:
+    fileUploads:
+      ipMax: 40
+      userMax: 20
+      ipWindowInMinutes: 15
+      userWindowInMinutes: 15
+    conversationsImport:
+      ipMax: 20
+      userMax: 10
+      ipWindowInMinutes: 15
+      userWindowInMinutes: 15
+
 # Example Actions Object Structure
 actions:
   allowedDomains:
