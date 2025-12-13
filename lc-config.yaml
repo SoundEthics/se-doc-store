@@ -340,8 +340,8 @@ mcpServers:
     serverInstructions: true
     requiresOAuth: true
   cipher:
-    type: sse
-    url: https://drain-bramaged-gen-db-staging.up.railway.app/sse
+    type: streamable-http
+    url: https://drain-bramaged-gen-db-staging.up.railway.app/http
     startup: false
     chatMenu: true
     serverInstructions: true
